@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { authinstance, postInstance } from "../../lib/axiosinstance.js";
+import { getCloudinaryImageProps } from "../../lib/cloudinaryImage.js";
 import userContext from "../context/user.context.js";
 
 function UserProfile() {
@@ -89,7 +90,14 @@ function UserProfile() {
           <>
             <section className="profile-hero">
               <div className="profile-portrait">
-                {profile.profileImage ? <img src={profile.profileImage} alt={`${profile.name}'s profile`} /> : <span>{profile.name?.charAt(0) || "?"}</span>}
+                {profile.profileImage ? (
+                  <img
+                    {...getCloudinaryImageProps(profile.profileImage, [256, 512], "180px")}
+                    alt={`${profile.name}'s profile`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : <span>{profile.name?.charAt(0) || "?"}</span>}
               </div>
               <div className="profile-identity">
                 <p className="eyebrow">A MEMBER OF COMMONPLACE</p>
@@ -119,7 +127,15 @@ function UserProfile() {
                       <span className="post-avatar">{profile.name?.charAt(0) || "?"}</span>
                       <div><strong>{profile.name}</strong><time>{post.createdAt ? new Date(post.createdAt).toLocaleString() : "Recently"}</time></div>
                     </header>
-                    {post.image && <img className="post-image" src={post.image} alt="Post" />}
+                    {post.image && (
+                      <img
+                        className="post-image"
+                        {...getCloudinaryImageProps(post.image, [480, 768, 1200], "(max-width: 700px) 100vw, 600px")}
+                        alt="Post"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
                     <p className="post-caption">{post.caption}</p>
                     <footer className="post-footer"><span>{post.likes?.length || 0} appreciations</span><span>COMMONPLACE / POST</span></footer>
                   </article>

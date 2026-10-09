@@ -8,6 +8,7 @@ import {
 } from "react";
 import { Link } from "react-router-dom";
 import { postInstance, storyInstance } from "../../lib/axiosinstance.js";
+import { getCloudinaryImageProps } from "../../lib/cloudinaryImage.js";
 import userContext from "../context/user.context.js";
 
 const getMessage = (error, fallback) =>
@@ -307,7 +308,12 @@ function HomeDashboard() {
                   aria-label={`View story by ${story.author?.user_name || "community member"}`}
                 >
                   {story.image ? (
-                    <img src={story.image} alt="" />
+                    <img
+                      {...getCloudinaryImageProps(story.image, [128, 256], "(max-width: 600px) 72px, 180px")}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
                   ) : (
                     <span className="story-placeholder">A moment</span>
                   )}
@@ -457,7 +463,15 @@ function HomeDashboard() {
                       </div>
                       <span className="post-mark">✳</span>
                     </header>
-                    {post.image && <img className="post-image" src={post.image} alt="Post" />}
+                    {post.image && (
+                      <img
+                        className="post-image"
+                        {...getCloudinaryImageProps(post.image, [480, 768, 1200], "(max-width: 700px) 100vw, 600px")}
+                        alt="Post"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
                     <p className="post-caption">{post.caption}</p>
                     <footer className="post-footer">
                       <button
@@ -482,7 +496,14 @@ function HomeDashboard() {
               <section className="profile-mini">
                 <p className="eyebrow">YOUR CORNER</p>
                 <div className="profile-mini-avatar">
-                  {user.profileImage ? <img src={user.profileImage} alt="" /> : user.name?.charAt(0)}
+                  {user.profileImage ? (
+                    <img
+                      {...getCloudinaryImageProps(user.profileImage, [128, 256], "128px")}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : user.name?.charAt(0)}
                 </div>
                 <h3>{user.name}</h3>
                 <p>@{user.user_name}</p>
@@ -540,8 +561,9 @@ function HomeDashboard() {
             {stories[activeStoryIndex].image && (
               <img
                 className="story-viewer-image"
-                src={stories[activeStoryIndex].image}
+                {...getCloudinaryImageProps(stories[activeStoryIndex].image, [480, 768, 1200], "(max-width: 600px) 100vw, 480px")}
                 alt={stories[activeStoryIndex].caption || "Story"}
+                decoding="async"
               />
             )}
             {stories[activeStoryIndex].caption && (

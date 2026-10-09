@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { authinstance } from "../../lib/axiosinstance.js";
+import { getCloudinaryImageProps } from "../../lib/cloudinaryImage.js";
 import userContext from "../context/user.context.js";
 
 function Discover() {
@@ -262,7 +263,12 @@ function Discover() {
                     to={`/profile/${encodeURIComponent(person.user_name)}`}
                   >
                     {person.profileImage ? (
-                      <img alt="" src={person.profileImage} />
+                      <img
+                        {...getCloudinaryImageProps(person.profileImage, [96, 192], "64px")}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
                     ) : (
                       <span>{person.name?.charAt(0) || "?"}</span>
                     )}

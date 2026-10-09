@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { authinstance, postInstance } from "../../lib/axiosinstance.js";
+import { getCloudinaryImageProps } from "../../lib/cloudinaryImage.js";
 import userContext from "../context/user.context.js";
 
 function Profile() {
@@ -87,7 +88,14 @@ function Profile() {
           <>
             <section className="profile-hero">
               <div className="profile-portrait">
-                {user.profileImage ? <img src={user.profileImage} alt={`${user.name}'s profile`} /> : <span>{user.name?.charAt(0) || "?"}</span>}
+                {user.profileImage ? (
+                  <img
+                    {...getCloudinaryImageProps(user.profileImage, [256, 512], "180px")}
+                    alt={`${user.name}'s profile`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : <span>{user.name?.charAt(0) || "?"}</span>}
               </div>
               <div className="profile-identity">
                 <p className="eyebrow">YOUR LITTLE CORNER</p>
@@ -115,7 +123,15 @@ function Profile() {
                       <span className="post-avatar">{user.name?.charAt(0) || "?"}</span>
                       <div><strong>{user.name}</strong><time>{post.createdAt ? new Date(post.createdAt).toLocaleString() : "Recently"}</time></div>
                     </header>
-                    {post.image && <img className="post-image" src={post.image} alt="Post" />}
+                    {post.image && (
+                      <img
+                        className="post-image"
+                        {...getCloudinaryImageProps(post.image, [480, 768, 1200], "(max-width: 700px) 100vw, 600px")}
+                        alt="Post"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
                     <p className="post-caption">{post.caption}</p>
                     <footer className="post-footer"><span>{post.likes?.length || 0} appreciations</span><span>COMMONPLACE / POST</span></footer>
                   </article>
