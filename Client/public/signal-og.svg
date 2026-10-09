@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#10120d"/>
+  <path d="M0 78h1200M0 156h1200M0 234h1200M0 312h1200M0 390h1200M0 468h1200M0 546h1200M78 0v630M156 0v630M234 0v630M312 0v630M390 0v630M468 0v630M546 0v630M624 0v630M702 0v630M780 0v630M858 0v630M936 0v630M1014 0v630M1092 0v630M1170 0v630" stroke="#d9ff6a" stroke-opacity=".08"/>
+  <circle cx="850" cy="315" r="236" fill="none" stroke="#d9ff6a" stroke-opacity=".18"/>
+  <circle cx="850" cy="315" r="166" fill="none" stroke="#d9ff6a" stroke-opacity=".3"/>
+  <circle cx="850" cy="315" r="91" fill="none" stroke="#d9ff6a" stroke-opacity=".46"/>
+  <path d="M850 315V79A236 236 0 0 1 1017 148Z" fill="#d9ff6a" fill-opacity=".12" stroke="#d9ff6a" stroke-opacity=".4"/>
+  <circle cx="921" cy="232" r="8" fill="#d9ff6a"/>
+  <circle cx="786" cy="371" r="6" fill="#ff734d"/>
+  <circle cx="850" cy="315" r="11" fill="#d9ff6a"/>
+  <text x="92" y="116" fill="#d9ff6a" font-family="monospace" font-size="20" letter-spacing="5">THE FREQUENCY IS YOURS</text>
+  <text x="84" y="328" fill="#f0f2e6" font-family="Arial,sans-serif" font-size="105" font-weight="700">Find your</text>
+  <text x="84" y="444" fill="#d9ff6a" font-family="Arial,sans-serif" font-size="105" font-weight="700">people.</text>
+  <text x="94" y="520" fill="#a2a895" font-family="monospace" font-size="19" letter-spacing="3">COMMONPLACE / COMMUNITY FREQUENCY 98.4</text>
+</svg>

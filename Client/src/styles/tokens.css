@@ -1,0 +1,131 @@
+:root {
+  color-scheme: light;
+
+  --n-0: oklch(99% 0.003 255);
+  --n-50: oklch(97% 0.005 255);
+  --n-100: oklch(93% 0.007 255);
+  --n-200: oklch(87% 0.009 255);
+  --n-300: oklch(77% 0.011 255);
+  --n-400: oklch(64% 0.013 255);
+  --n-500: oklch(51% 0.015 255);
+  --n-600: oklch(40% 0.017 255);
+  --n-700: oklch(31% 0.018 255);
+  --n-800: oklch(24% 0.018 255);
+  --n-900: oklch(18% 0.016 255);
+  --n-950: oklch(12% 0.013 255);
+
+  --brand-500: oklch(46% 0.12 255);
+  --brand-600: oklch(37% 0.1 255);
+  --brand-700: oklch(29% 0.075 255);
+  --brand-100: oklch(94% 0.018 255);
+  --accent-500: oklch(62% 0.18 26);
+  --accent-600: oklch(49% 0.16 26);
+
+  --success: oklch(53% 0.11 155);
+  --warning: oklch(60% 0.12 75);
+  --danger: oklch(50% 0.16 25);
+  --info: oklch(48% 0.11 245);
+
+  --bg: var(--n-50);
+  --bg-elevated: var(--n-0);
+  --bg-sunken: var(--n-100);
+  --bg-structural: var(--n-200);
+  --fg: var(--n-900);
+  --fg-muted: var(--n-600);
+  --fg-subtle: var(--n-500);
+  --border: color-mix(in oklch, var(--fg) 9%, transparent);
+  --border-strong: color-mix(in oklch, var(--fg) 16%, transparent);
+  --ring: var(--brand-500);
+  --signal: var(--accent-500);
+
+  --paper: var(--bg);
+  --paper-deep: var(--bg-sunken);
+  --ink: var(--fg);
+  --muted: var(--fg-muted);
+  --line: var(--border);
+  --green: var(--brand-600);
+  --green-dark: var(--brand-700);
+  --orange: var(--accent-600);
+
+  --font-display: "Newsreader", Georgia, serif;
+  --font-body: "DM Sans", "Trebuchet MS", sans-serif;
+  --font-mono: "DM Mono", "Courier New", monospace;
+  --serif: var(--font-display);
+
+  --step--2: clamp(0.69rem, 0.66rem + 0.17vw, 0.8rem);
+  --step--1: clamp(0.83rem, 0.79rem + 0.22vw, 0.96rem);
+  --step-0: clamp(1rem, 0.94rem + 0.3vw, 1.13rem);
+  --step-1: clamp(1.25rem, 1.13rem + 0.6vw, 1.5rem);
+  --step-2: clamp(1.56rem, 1.33rem + 1.1vw, 2rem);
+  --step-3: clamp(1.95rem, 1.55rem + 1.9vw, 2.67rem);
+  --step-4: clamp(2.44rem, 1.78rem + 3.2vw, 3.55rem);
+  --step-5: clamp(3.05rem, 2rem + 5.1vw, 4.74rem);
+  --step-6: clamp(3.81rem, 2.1rem + 8.2vw, 6.31rem);
+  --step-hero: clamp(3rem, 2rem + 6vw, 7.5rem);
+  --lh-tight: 0.98;
+  --lh-snug: 1.15;
+  --lh-body: 1.6;
+  --tracking-display: -0.045em;
+  --tracking-body: -0.01em;
+  --tracking-caps: 0.13em;
+
+  --s-0: 0;
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+  --s-10: 8rem;
+  --s-11: 12rem;
+  --section-y: clamp(5rem, 4rem + 8vw, 12rem);
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 3rem);
+  --container: 80rem;
+  --container-narrow: 46rem;
+
+  --r-xs: 0.25rem;
+  --r-sm: 0.5rem;
+  --r-md: 0.75rem;
+  --r-lg: 1rem;
+  --r-xl: 1.5rem;
+  --r-full: 999px;
+  --shadow-1: 0 1px 2px oklch(18% 0.016 255 / 0.04), 0 4px 16px oklch(18% 0.016 255 / 0.035);
+  --shadow-2: 0 2px 6px oklch(18% 0.016 255 / 0.06), 0 12px 30px oklch(18% 0.016 255 / 0.07);
+  --shadow-3: 0 4px 12px oklch(18% 0.016 255 / 0.07), 0 24px 56px oklch(18% 0.016 255 / 0.1);
+  --shadow-glow: 0 0 0 1px var(--brand-500), 0 8px 32px color-mix(in oklch, var(--brand-500) 18%, transparent);
+  --inner-hl: inset 0 1px 0 oklch(100% 0 0 / 0.6);
+
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 100;
+  --z-nav: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+
+  --dur-instant: 90ms;
+  --dur-fast: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 520ms;
+  --dur-slower: 900ms;
+  --dur-hero: 1400ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.64, 0, 0.78, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --stagger: 60ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
